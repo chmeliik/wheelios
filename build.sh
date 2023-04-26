@@ -12,21 +12,21 @@ else
 fi
 
 cleanup_on_exit () {
-    if [[ -f Dockerfile.cachi2 ]]; then
-        rm Dockerfile.cachi2
+    if [[ -f "$dockerfile.cachi2" ]]; then
+        rm "$dockerfile.cachi2"
     fi
     (cd "$dir"; git checkout .)
 }
 trap cleanup_on_exit EXIT
 
 sed 's|^\s*run |RUN source /cachi2/cachi2.env \&\& \\\n    |i' "$dockerfile" |
-    tee Dockerfile.cachi2
+    tee "$dockerfile.cachi2"
 
 cachi2 generate-env "$output_dir" --for-output-dir /cachi2 -o "$output_dir/cachi2.env"
 cachi2 inject-files "$output_dir" --for-output-dir /cachi2
 
 podman build "$dir" \
-    -f Dockerfile.cachi2 \
+    -f "$dockerfile.cachi2" \
     -t "cachi2-$appname" \
     -v "$output_dir:/cachi2:z" \
     --network none \
