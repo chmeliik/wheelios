@@ -1,4 +1,4 @@
-prepare: venv submodules
+prepare: venv submodules builder-images
 
 .PHONY: venv
 venv:
@@ -8,3 +8,8 @@ venv:
 .PHONY: submodules
 submodules:
 	git submodule update --init
+
+.PHONY: builder-images
+builder-images:
+	podman build -f atomic-reactor-dockerfiles/wheelbuilder.Dockerfile -t atomic-reactor-wheelbuilder
+	podman build -f atomic-reactor-dockerfiles/sdistbuilder.Dockerfile -t atomic-reactor-sdistbuilder

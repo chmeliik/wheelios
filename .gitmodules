@@ -8,3 +8,12 @@
 	url = https://github.com/chmeliik/dashdotdb
 	branch = cachi2-requirements
 	shallow = true
+[submodule "repos/atomic-reactor-wheels"]
+	path = repos/atomic-reactor-wheels
+	url = https://github.com/chmeliik/atomic-reactor
+	branch = cachi2-on-wheels
+	shallow = true
+[submodule "repos/atomic-reactor-sdists"]
+	path = repos/atomic-reactor-sdists
+	url = https://github.com/chmeliik/atomic-reactor
+	shallow = true
