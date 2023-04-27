@@ -12,5 +12,6 @@ RUN dnf -y install \
         popt-devel \
         python38 \
         python38-pip \
+        python38-wheel \
         python38-devel \
     && dnf clean all
