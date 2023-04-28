@@ -22,3 +22,8 @@
 	url = https://github.com/chmeliik/cachi2
 	branch = wheelios
 	shallow = true
+[submodule "repos/cachi2-sdists"]
+	path = repos/cachi2-sdists
+	url = https://github.com/chmeliik/cachi2
+	branch = cachi2-sdist-build
+	shallow = true
