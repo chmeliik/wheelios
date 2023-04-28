@@ -1,4 +1,4 @@
-FROM atomic-reactor-sdistbuilder:latest
+FROM atomic-reactor-wheelbuilder:latest
 
 COPY . /opt/atomic-reactor
 WORKDIR /opt/atomic-reactor
