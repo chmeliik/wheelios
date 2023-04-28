@@ -13,6 +13,7 @@ submodules:
 builder-images:
 	podman build -f dockerfiles/atomic-reactor/wheelbuilder.Dockerfile -t atomic-reactor-wheelbuilder
 	podman build -f dockerfiles/atomic-reactor/sdistbuilder.Dockerfile -t atomic-reactor-sdistbuilder
+	podman build -f dockerfiles/cachi2/wheelbuilder.Dockerfile -t cachi2-wheelbuilder
 
 .PHONY: dashdotdb-wheels
 dashdotdb-wheels:
@@ -33,3 +34,8 @@ atomic-reactor-wheels:
 atomic-reactor-sdists:
 	./prefetch.sh repos/atomic-reactor-sdists
 	./build.sh repos/atomic-reactor-sdists -f dockerfiles/atomic-reactor/sdist.Dockerfile
+
+.PHONY: cachi2-wheels
+cachi2-wheels:
+	./prefetch.sh repos/cachi2-wheels
+	./build.sh repos/cachi2-wheels -f dockerfiles/cachi2/wheel.Dockerfile

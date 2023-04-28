@@ -17,3 +17,8 @@
 	path = repos/atomic-reactor-sdists
 	url = https://github.com/chmeliik/atomic-reactor
 	shallow = true
+[submodule "repos/cachi2-wheels"]
+	path = repos/cachi2-wheels
+	url = https://github.com/chmeliik/cachi2
+	branch = wheelios
+	shallow = true
